@@ -26,7 +26,7 @@ export default function NavLinks(props){
             <nav>
                 <div className='nav-links'>
                     <StyledLink to='/'>Home</StyledLink>
-                    <StyledLink to='/pizza'>Order Pizza</StyledLink>
+                    <StyledLink to='/pizza' onClick={props.routeToShop}>Order Pizza</StyledLink>
                 </div>
             </nav>
         </StyledNavLinks>
