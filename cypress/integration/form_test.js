@@ -51,5 +51,25 @@ describe('Pizza App', () => {
             toppingsInput().get('#sausage').uncheck();
             toppingsInput().get('#onion').uncheck();
         })
+        it('can select three toppings', () => {
+            toppingsInput().get('#mushroom').check();
+            toppingsInput().get('#sausage').check();
+            toppingsInput().get('#onion').check();
+            // reset
+            toppingsInput().get('#mushroom').uncheck();
+            toppingsInput().get('#sausage').uncheck();
+            toppingsInput().get('#onion').uncheck();
+        })
+        it('can select four toppings', () => {
+            toppingsInput().get('#pepperoni').check();
+            toppingsInput().get('#mushroom').check();
+            toppingsInput().get('#sausage').check();
+            toppingsInput().get('#onion').check();
+            // reset
+            toppingsInput().get('#pepperoni').uncheck();
+            toppingsInput().get('#mushroom').uncheck();
+            toppingsInput().get('#sausage').uncheck();
+            toppingsInput().get('#onion').uncheck();
+        })
     })
 })
