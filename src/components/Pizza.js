@@ -2,16 +2,25 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-    width: 70%
     display: flex;
-    margin: 0 auto;
+    width: 60%;
+    flex-wrap: wrap;
+    margin-left: 2%;
+    margin-top: 2%;
     padding: 1% 3%;
     background-color: ${props => props.theme.pizzaDough};
     color: ${props => props.theme.olive};
+    border-style: dashed;
+    border-color: ${props => props.theme.lighterBeige};
+    outline: 5px solid ${props => props.theme.lightBeige};
+    h2 {
+        width: 70%;
+    }
     .pizzaDetails{
-        background-color:${props => props.theme.darkGreen};
+        width: 50%;
+        background-color:${props => props.theme.beige};
         color: ${props => props.theme.black};
-        padding: 0 2%;
+        padding: 1% 5%;
     }
 `
 
