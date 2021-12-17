@@ -6,4 +6,6 @@ export default {
     brightGreen: '#597718',
     cheese: '#E4B455',
     pizzaDough: '#D3B786',
+    black: '#313639',
+    white: '#f8f8ff',
 }
