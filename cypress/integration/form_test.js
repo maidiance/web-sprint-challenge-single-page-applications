@@ -72,4 +72,35 @@ describe('Pizza App', () => {
             toppingsInput().get('#onion').uncheck();
         })
     })
+
+    describe('Check if user can submit form', () => {
+        it('can submit a new pizza without toppings', () => {
+            nameInput().type('testOrder01');
+            pizzaSizeInput().select('medium');
+            submitButton().should('not.be.disabled');
+            submitButton().click();
+            cy.contains('testOrder01').should('exist');
+            // reset
+            // we would remove the pizza here!
+        })
+        it('can submit a new pizza with special instructions', () => {
+            nameInput().type('testOrder02');
+            pizzaSizeInput().select('large');
+            specialTextInput().type('testing purposes');
+            submitButton().should('not.be.disabled');
+            submitButton().click();
+            cy.contains('testOrder02').should('exist');
+            // reset
+            // we would remove the pizza here!
+        })
+        it('can submit a new pizza with two toppings', () => {
+            nameInput().type('testOrder03');
+            pizzaSizeInput().select('jumbo');
+            toppingsInput().get('#pepperoni').check();
+            toppingsInput().get('#mushroom').check();
+            submitButton().should('not.be.disabled');
+            submitButton().click();
+            cy.contains('testOrder03').should('exist');
+        })
+    })
 })

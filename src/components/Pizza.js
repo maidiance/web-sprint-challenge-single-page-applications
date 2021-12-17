@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Pizza({ details }) {
+function Pizza({ details, remove }) {
     if (!details) {
         return <h3>Working fetching your pizza orders...</h3>
     }

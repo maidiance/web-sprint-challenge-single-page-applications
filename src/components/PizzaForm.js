@@ -35,26 +35,26 @@ export default function PizzaForm(props){
     const getPizzas = () => {
         // axios get call
         axios.get('https://reqres.in/api/orders')
-        .then(resp => {
-            // console.log('response', resp);
-        })
-        .catch(err => {
-            console.error(err);
-        })
+            .then(resp => {
+                // console.log('get', resp);
+            })
+            .catch(err => {
+                console.error(err);
+            })
     }
 
     const postNewPizza = newPizza => {
         // axios post call
         axios.post('https://reqres.in/api/orders', newPizza)
-        .then(resp => {
-            // console.log('post', resp.data);
-            setPizzas([ resp.data, ...pizzas ]);
-        })
-        .catch(err => {
-            console.error(err);
-        })
-        .finally(() => setFormValues(initialFormValues))
-    }
+            .then(resp => {
+                // console.log('post', resp.data);
+                setPizzas([ resp.data, ...pizzas ]);
+            })
+            .catch(err => {
+                console.error(err);
+            })
+            .finally(() => setFormValues(initialFormValues))
+        }
     
     const validate = (name, value) => {
         yup.reach(schema, name)
