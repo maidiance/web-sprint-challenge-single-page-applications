@@ -1,5 +1,8 @@
 import React, { useState, useEffect }  from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+import Header from './Header';
+import NavLinks from './NavLinks';
 import OrderPizza from './OrderPizza';
 import Pizza from './Pizza';
 import schema from '../validation/formSchema';
@@ -33,7 +36,7 @@ export default function PizzaForm(props){
         // axios get call
         axios.get('https://reqres.in/api/orders')
         .then(resp => {
-            console.log('response', resp);
+            // console.log('response', resp);
         })
         .catch(err => {
             console.error(err);
@@ -44,7 +47,7 @@ export default function PizzaForm(props){
         // axios post call
         axios.post('https://reqres.in/api/orders', newPizza)
         .then(resp => {
-            console.log('post', resp.data);
+            // console.log('post', resp.data);
             setPizzas([ resp.data, ...pizzas ]);
         })
         .catch(err => {
@@ -73,7 +76,8 @@ export default function PizzaForm(props){
             nameInput: formValues.nameInput.trim(),
             pizzaSize: formValues.pizzaSize.trim(),
             toppings: ['pepperoni', 'mushroom', 'sausage', 'onion'].filter(topping => !!formValues[topping]),
-            specialInstructions: formValues.specialInstructions.trim() ? formValues.specialInstructions.trim() : 'none',
+            specialInstructions: formValues.specialInstructions.trim()
+                ? formValues.specialInstructions.trim() : 'none',
         }
         postNewPizza(newPizza);
     }
@@ -86,8 +90,21 @@ export default function PizzaForm(props){
         schema.isValid(formValues).then(valid => setDisabled(!valid));
     }, [formValues]);
 
+    const history = useHistory();
+
+    const routeToHome = () => {
+        history.push('/');
+    }
+
     return (
-        <div className='container'>
+        <>
+            {
+                <Header />
+            }
+            {
+                <NavLinks route={routeToHome}/>
+            }
+            <div className='container'>
             <h2>Pizza App</h2>
             <OrderPizza
                 values={formValues}
@@ -105,5 +122,6 @@ export default function PizzaForm(props){
                 })
             }
         </div>
+        </>
     )
 }
