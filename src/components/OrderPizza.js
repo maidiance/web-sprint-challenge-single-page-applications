@@ -56,6 +56,7 @@ export default function OrderPizza(props) {
                 <h2>Toppings</h2>
                 <label>Pepperoni
                     <input
+                        id='pepperoni'
                         type='checkbox'
                         name='pepperoni'
                         onChange={onChange}
@@ -64,6 +65,7 @@ export default function OrderPizza(props) {
                 </label>
                 <label>Mushroom
                     <input
+                        id='mushroom'
                         type='checkbox'
                         name='mushroom'
                         onChange={onChange}
@@ -72,6 +74,7 @@ export default function OrderPizza(props) {
                 </label>
                 <label>Sausage
                     <input
+                        id='sausage'
                         type='checkbox'
                         name='sausage'
                         onChange={onChange}
@@ -80,6 +83,7 @@ export default function OrderPizza(props) {
                 </label>
                 <label>Onion
                     <input
+                        id='onion'
                         type='checkbox'
                         name='onion'
                         onChange={onChange}

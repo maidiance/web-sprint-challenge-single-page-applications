@@ -37,6 +37,19 @@ describe('Pizza App', () => {
                 .should('have.value', '')
                 .type('testing')
                 .should('have.value', 'testing');
+            // reset
+            nameInput().clear();
+            specialTextInput().clear();
+        })
+    })
+
+    describe('Check multiple toppings', () => {
+        it('can select two toppings', () => {
+            toppingsInput().get('#sausage').check();
+            toppingsInput().get('#onion').check();
+            // reset
+            toppingsInput().get('#sausage').uncheck();
+            toppingsInput().get('#onion').uncheck();
         })
     })
 })
