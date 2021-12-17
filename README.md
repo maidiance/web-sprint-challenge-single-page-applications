@@ -39,6 +39,9 @@ Demonstrate your understanding of this week's concepts by answering the followin
     React's useRouteMatch hook is used for building route paths (from /pizza back to / for example) and link locations (where did we put /blog or /contact?) creating code that can use {url}/pizza instead of localhost:1234/pizza making for more durable code.
 
 1. How would you explain form validation to someone who has never programmed before?
+
+    Form validation is how we make sure requirements are met (for example, terms of service being accepted) or that data is 'clean' (such as a name input not being '1234' or simply blank). 
+
 1. In 1-2 sentences, define end to end testing.
 
 ## Instructions
