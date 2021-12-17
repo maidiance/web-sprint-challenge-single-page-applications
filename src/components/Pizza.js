@@ -5,8 +5,7 @@ const StyledDiv = styled.div`
     display: flex;
     width: 60%;
     flex-wrap: wrap;
-    margin-left: 2%;
-    margin-top: 2%;
+    margin: 2% 2%;
     padding: 1% 3%;
     background-color: ${props => props.theme.pizzaDough};
     color: ${props => props.theme.olive};

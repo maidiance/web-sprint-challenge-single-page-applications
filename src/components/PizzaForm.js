@@ -105,7 +105,6 @@ export default function PizzaForm(props){
                 <NavLinks route={routeToHome}/>
             }
             <div className='container'>
-            <h2>Pizza App</h2>
             <OrderPizza
                 values={formValues}
                 change={inputChange}
