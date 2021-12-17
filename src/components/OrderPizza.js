@@ -3,45 +3,58 @@ import styled from 'styled-components';
 
 const StyledForm = styled.div`
     display: flex;
-    width: 90%;
     flex-wrap: wrap;
-    margin-left: 2%;
-    margin-top: 2%;
+    margin: 2% 2%;
     padding: 1% 3%;
     background-color: ${props=> props.theme.beige};
     border-style: double;
     border-color: ${props => props.theme.darkerBeige};
     outline: 5px solid ${props => props.theme.lightBeige};
-    .name{
+    .form-group {
+        min-width: 800px;
+    }
+    .name {
         width: 90%;
-        margin: 1% 0%;
+        margin: 1% 5%;
     }
     .name p {
         display: inline;
         margin-right: 1%;
     }
-    .size{
+    .size {
         width: 90%;
-        margin: 1% 0%;
+        margin: 1% 5%;
     }
     .size p {
         display: inline;
         margin-right: 1%;
     }
-    .toppings{
+    .toppings {
         padding-bottom: 2%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        width: 90%;
+        width: 100%;
     }
-    .toppings h2{
+    .toppings h2 {
         width: 90%;
         margin: 1% 0%;
         padding: 1%;
     }
-    #order-button{
-        width: 50%;
+    .options {
+        display: flex;
+        justify-content: space-around;
+        margin-left: 5%;
+    }
+    .instructions {
+        padding-bottom: 2%;
+    }
+    .instructions p {
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+    #special-text {
+        width: 90%;
+    }
+    #order-button {
+        width: 40%;
         padding: 2%;
         margin: 1% 0;
     }
@@ -108,42 +121,44 @@ export default function OrderPizza(props) {
                     </div>
                     <div className='toppings'>
                         <h2>Toppings</h2>
-                        <label>Pepperoni
-                            <input
-                                id='pepperoni'
-                                type='checkbox'
-                                name='pepperoni'
-                                onChange={onChange}
-                                checked={values.pepperoni}
-                            />
-                        </label>
-                        <label>Mushroom
-                            <input
-                                id='mushroom'
-                                type='checkbox'
-                                name='mushroom'
-                                onChange={onChange}
-                                checked={values.mushroom}
-                            />
-                        </label>
-                        <label>Sausage
-                            <input
-                                id='sausage'
-                                type='checkbox'
-                                name='sausage'
-                                onChange={onChange}
-                                checked={values.sausage}
-                            />
-                        </label>
-                        <label>Onion
-                            <input
-                                id='onion'
-                                type='checkbox'
-                                name='onion'
-                                onChange={onChange}
-                                checked={values.onion}
-                            />
-                        </label>
+                        <div className='options'>
+                            <label>Pepperoni
+                                <input
+                                    id='pepperoni'
+                                    type='checkbox'
+                                    name='pepperoni'
+                                    onChange={onChange}
+                                    checked={values.pepperoni}
+                                />
+                            </label>
+                            <label>Mushroom
+                                <input
+                                    id='mushroom'
+                                    type='checkbox'
+                                    name='mushroom'
+                                    onChange={onChange}
+                                    checked={values.mushroom}
+                                />
+                            </label>
+                            <label>Sausage
+                                <input
+                                    id='sausage'
+                                    type='checkbox'
+                                    name='sausage'
+                                    onChange={onChange}
+                                    checked={values.sausage}
+                                />
+                            </label>
+                            <label>Onion
+                                <input
+                                    id='onion'
+                                    type='checkbox'
+                                    name='onion'
+                                    onChange={onChange}
+                                    checked={values.onion}
+                                />
+                            </label>
+                        </div>
                     </div>
                     <div className='instructions'>
                         <label><p>Special Instructions</p>
