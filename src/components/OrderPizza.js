@@ -3,23 +3,36 @@ import styled from 'styled-components';
 
 const StyledForm = styled.div`
     display: flex;
-    width: 80%;
+    width: 90%;
     flex-wrap: wrap;
     margin-left: 2%;
     margin-top: 2%;
     padding: 1% 3%;
+    background-color: ${props=> props.theme.beige};
     border-style: double;
     border-color: ${props => props.theme.darkerBeige};
     outline: 5px solid ${props => props.theme.lightBeige};
     .name{
-        width:60%;
+        display: inline;
+        width: 90%;
+        margin: 1% 0%;
+    }
+    .name p {
+        display: inline;
+        margin-right: 1%;
     }
     .size{
-        width:60%;
+        width: 60%;
+        margin: 1% 0%;
     }
     .toppings{
-        width:80%;
-        background-color: ${props => props.theme.lighterBeige};
+        width: 90%;
+        margin: 1% 0%;
+        padding: 0 5% 2%;
+    }
+    .toppings h2{
+        margin: 1% 0%;
+        padding: 1%;
     }
 
 `
@@ -57,7 +70,7 @@ export default function OrderPizza(props) {
 
                 <div className='form-group inputs'>
                     <div className='name'>
-                        <label>Name
+                        <label><p>Name</p>
                             <input
                                 id='name-input'
                                 value={values.nameInput}
