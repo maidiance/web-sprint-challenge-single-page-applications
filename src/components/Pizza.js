@@ -8,7 +8,7 @@ function Pizza({ details }) {
     return (
         <div className='pizza container'>
             <h2>{details.nameInput}</h2>
-            <p>Pizza size: {details.pizzaSize}</p>
+            <p>Pizza size: {details.sizeDropdown}</p>
             {
                 !!details.toppings && !!details.toppings.length &&
                 <div>

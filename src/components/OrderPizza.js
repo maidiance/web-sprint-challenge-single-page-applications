@@ -33,7 +33,7 @@ export default function OrderPizza(props) {
             <div className='form-group inputs'>
                 <label>Name
                     <input
-                        id= 'name-input'
+                        id='name-input'
                         value={values.nameInput}
                         onChange={onChange}
                         name='nameInput'
@@ -42,10 +42,10 @@ export default function OrderPizza(props) {
                 </label>
                 <label>Pizza Size
                     <select
-                        id= 'size-dropdown'
-                        value={values.pizzaSize}
+                        id='size-dropdown'
+                        value={values.sizeDropdown}
                         onChange={onChange}
-                        name='pizzaSize'
+                        name='sizeDropdown'
                     >
                         <option value=''>- Select an option -</option>
                         <option value='medium'>Medium (12 inches)</option>

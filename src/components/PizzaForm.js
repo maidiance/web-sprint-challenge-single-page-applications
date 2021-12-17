@@ -74,7 +74,7 @@ export default function PizzaForm(props){
     const formSubmit = () => {
         const newPizza = {
             nameInput: formValues.nameInput.trim(),
-            pizzaSize: formValues.pizzaSize.trim(),
+            sizeDropdown: formValues.sizeDropdown.trim(),
             toppings: ['pepperoni', 'mushroom', 'sausage', 'onion'].filter(topping => !!formValues[topping]),
             specialInstructions: formValues.specialInstructions.trim()
                 ? formValues.specialInstructions.trim() : 'none',
