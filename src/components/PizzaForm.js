@@ -10,7 +10,7 @@ import * as yup from 'yup';
 
 const initialFormValues = {
   nameInput: '',
-  pizzaSize: '',
+  sizeDropdown: '',
   pepperoni: false,
   mushroom: false,
   sausage: false,
@@ -20,7 +20,7 @@ const initialFormValues = {
 
 const initialFormErrors = {
   nameInput: '',
-  pizzaSize: '',
+  sizeDropdown: '',
 }
 
 const initialPizzas = [];
