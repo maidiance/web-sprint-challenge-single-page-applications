@@ -48,9 +48,24 @@ const App = () => {
         console.log('post', resp);
       })
       .catch(err => {
-        console.error(err)''
+        console.error(err);
       })
       .finally(() => setFormValues(initialFormValues))
+  }
+  
+  const validate = (name, value) => {
+    yup.reach(schema, name)
+      .validate(value)
+      .then(() => setFormErrors({ ...formErrors, [name]: '' }))
+      .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0] }))
+  }
+
+  const inputChange = (name, value) => {
+    validate(name, value);
+    setFormValues({
+      ...formValues,
+      [name]: value
+    })
   }
 
   return (
