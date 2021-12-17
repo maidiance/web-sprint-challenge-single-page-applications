@@ -3,11 +3,25 @@ import styled from 'styled-components';
 
 const StyledForm = styled.div`
     display: flex;
-    width: 60%;
+    width: 80%;
     flex-wrap: wrap;
     margin-left: 2%;
     margin-top: 2%;
     padding: 1% 3%;
+    border-style: double;
+    border-color: ${props => props.theme.darkerBeige};
+    outline: 5px solid ${props => props.theme.lightBeige};
+    .name{
+        width:60%;
+    }
+    .size{
+        width:60%;
+    }
+    .toppings{
+        width:80%;
+        background-color: ${props => props.theme.lighterBeige};
+    }
+
 `
 
 export default function OrderPizza(props) {
@@ -42,65 +56,71 @@ export default function OrderPizza(props) {
                 </div>
 
                 <div className='form-group inputs'>
-                    <label>Name
-                        <input
-                            id='name-input'
-                            value={values.nameInput}
-                            onChange={onChange}
-                            name='nameInput'
-                            type='text'
-                        />
-                    </label>
-                    <label>Pizza Size
-                        <select
-                            id='size-dropdown'
-                            value={values.sizeDropdown}
-                            onChange={onChange}
-                            name='sizeDropdown'
-                        >
-                            <option value=''>- Select an option -</option>
-                            <option value='medium'>Medium (12 inches)</option>
-                            <option value='large'>Large (16 inches)</option>
-                            <option value='jumbo'>Jumbo (20 inches)</option>
-                        </select>
-                    </label>
-                    <h2>Toppings</h2>
-                    <label>Pepperoni
-                        <input
-                            id='pepperoni'
-                            type='checkbox'
-                            name='pepperoni'
-                            onChange={onChange}
-                            checked={values.pepperoni}
-                        />
-                    </label>
-                    <label>Mushroom
-                        <input
-                            id='mushroom'
-                            type='checkbox'
-                            name='mushroom'
-                            onChange={onChange}
-                            checked={values.mushroom}
-                        />
-                    </label>
-                    <label>Sausage
-                        <input
-                            id='sausage'
-                            type='checkbox'
-                            name='sausage'
-                            onChange={onChange}
-                            checked={values.sausage}
-                        />
-                    </label>
-                    <label>Onion
-                        <input
-                            id='onion'
-                            type='checkbox'
-                            name='onion'
-                            onChange={onChange}
-                            checked={values.onion}
-                        />
-                    </label>
+                    <div className='name'>
+                        <label>Name
+                            <input
+                                id='name-input'
+                                value={values.nameInput}
+                                onChange={onChange}
+                                name='nameInput'
+                                type='text'
+                            />
+                        </label>
+                    </div>
+                    <div className='size'>
+                        <label>Pizza Size
+                            <select
+                                id='size-dropdown'
+                                value={values.sizeDropdown}
+                                onChange={onChange}
+                                name='sizeDropdown'
+                            >
+                                <option value=''>- Select an option -</option>
+                                <option value='medium'>Medium (12 inches)</option>
+                                <option value='large'>Large (16 inches)</option>
+                                <option value='jumbo'>Jumbo (20 inches)</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div className='toppings'>
+                        <h2>Toppings</h2>
+                        <label>Pepperoni
+                            <input
+                                id='pepperoni'
+                                type='checkbox'
+                                name='pepperoni'
+                                onChange={onChange}
+                                checked={values.pepperoni}
+                            />
+                        </label>
+                        <label>Mushroom
+                            <input
+                                id='mushroom'
+                                type='checkbox'
+                                name='mushroom'
+                                onChange={onChange}
+                                checked={values.mushroom}
+                            />
+                        </label>
+                        <label>Sausage
+                            <input
+                                id='sausage'
+                                type='checkbox'
+                                name='sausage'
+                                onChange={onChange}
+                                checked={values.sausage}
+                            />
+                        </label>
+                        <label>Onion
+                            <input
+                                id='onion'
+                                type='checkbox'
+                                name='onion'
+                                onChange={onChange}
+                                checked={values.onion}
+                            />
+                        </label>
+                    </div>
                     <label>Special Instructions
                         <input
                             id='special-text'
