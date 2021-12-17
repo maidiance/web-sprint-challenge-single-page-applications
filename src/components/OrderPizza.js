@@ -122,7 +122,7 @@ export default function OrderPizza(props) {
                     <div className='toppings'>
                         <h2>Toppings</h2>
                         <div className='options'>
-                            <label>Pepperoni
+                            <label>
                                 <input
                                     id='pepperoni'
                                     type='checkbox'
@@ -130,8 +130,9 @@ export default function OrderPizza(props) {
                                     onChange={onChange}
                                     checked={values.pepperoni}
                                 />
+                                Pepperoni
                             </label>
-                            <label>Mushroom
+                            <label>
                                 <input
                                     id='mushroom'
                                     type='checkbox'
@@ -139,8 +140,9 @@ export default function OrderPizza(props) {
                                     onChange={onChange}
                                     checked={values.mushroom}
                                 />
+                                Mushroom
                             </label>
-                            <label>Sausage
+                            <label>
                                 <input
                                     id='sausage'
                                     type='checkbox'
@@ -148,8 +150,9 @@ export default function OrderPizza(props) {
                                     onChange={onChange}
                                     checked={values.sausage}
                                 />
+                                Sausage
                             </label>
-                            <label>Onion
+                            <label>
                                 <input
                                     id='onion'
                                     type='checkbox'
@@ -157,6 +160,7 @@ export default function OrderPizza(props) {
                                     onChange={onChange}
                                     checked={values.onion}
                                 />
+                                Onion
                             </label>
                         </div>
                     </div>
