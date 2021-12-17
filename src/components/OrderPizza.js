@@ -15,8 +15,9 @@ export default function OrderPizza(props) {
     }
 
     const onChange = evt => {
-        const { name, value } = evt.target;
-        change(name, value);
+        const { name, value, checked, type } = evt.target;
+        const valueToUse = type === 'checkbox' ? checked : value;
+        change(name, valueToUse);
     }
 
     return (
@@ -33,9 +34,9 @@ export default function OrderPizza(props) {
                 <label>Name
                     <input
                         id= 'name-input'
-                        value={values.name}
+                        value={values.nameInput}
                         onChange={onChange}
-                        name='name'
+                        name='nameInput'
                         type='text'
                     />
                 </label>

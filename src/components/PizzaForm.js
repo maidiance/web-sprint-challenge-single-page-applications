@@ -1,11 +1,12 @@
 import React, { useState, useEffect }  from 'react';
 import axios from 'axios';
 import OrderPizza from './OrderPizza';
+import Pizza from './Pizza';
 import schema from '../validation/formSchema';
 import * as yup from 'yup';
 
 const initialFormValues = {
-  name: '',
+  nameInput: '',
   pizzaSize: '',
   pepperoni: false,
   mushroom: false,
@@ -41,9 +42,10 @@ export default function PizzaForm(props){
 
     const postNewPizza = newPizza => {
         // axios post call
-        axios.post('https://reqres.in/api/orders')
+        axios.post('https://reqres.in/api/orders', newPizza)
         .then(resp => {
-            console.log('post', resp);
+            console.log('post', resp.data);
+            setPizzas([ resp.data, ...pizzas ]);
         })
         .catch(err => {
             console.error(err);
@@ -68,10 +70,10 @@ export default function PizzaForm(props){
 
     const formSubmit = () => {
         const newPizza = {
-            name: formValues.name.trim(),
+            nameInput: formValues.nameInput.trim(),
             pizzaSize: formValues.pizzaSize.trim(),
             toppings: ['pepperoni', 'mushroom', 'sausage', 'onion'].filter(topping => !!formValues[topping]),
-            specialInstructions: formValues.specialInstructions.trim(),
+            specialInstructions: formValues.specialInstructions.trim() ? formValues.specialInstructions.trim() : 'none',
         }
         postNewPizza(newPizza);
     }
@@ -94,6 +96,14 @@ export default function PizzaForm(props){
                 disabled={disabled}
                 errors={formErrors}
             />
+
+            {
+                pizzas.map(pizza => {
+                    return(
+                        <Pizza key={pizza.id} details={pizza} />
+                    )
+                })
+            }
         </div>
     )
 }
