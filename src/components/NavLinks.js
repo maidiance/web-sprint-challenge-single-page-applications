@@ -19,7 +19,6 @@ const StyledLink = styled(Link)`
     }
 `
 
-
 export default function NavLinks(props){
     return(
         <StyledNavLinks>

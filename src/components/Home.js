@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import Header from './components/Header.js';
-import NavLinks from './components/NavLinks.js';
+import Header from './Header';
+import NavLinks from './NavLinks';
 
 export default function Home() {
     const history = useHistory();

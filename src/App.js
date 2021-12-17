@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import Header from './components/Header.js';
-import NavLinks from './components/NavLinks.js';
+import { Route, Switch } from 'react-router-dom';
+import Home from './components/Home';
 import OrderPizza from './components/OrderPizza';
 import schema from './validation/formSchema';
 import * as yup from 'yup';
@@ -88,14 +88,16 @@ const App = () => {
 
   return (
     <>
-      {
-        <Header />
-      }
-      {
-        <NavLinks />
-      }
-      
+      <Switch>
+          <Route path='/pizza'>
+              <OrderPizza />
+          </Route>
+          <Route path='/'>
+              <Home />
+          </Route>
+      </Switch>
     </>
+    
   );
 };
 export default App;
