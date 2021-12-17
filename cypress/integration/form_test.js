@@ -26,4 +26,17 @@ describe('Pizza App', () => {
             submitButton.apply().should('be.disabled');
         })
     })
+
+    describe('Check text input functionality', () => {
+        it('can type in the text boxes', () => {
+            nameInput()
+                .should('have.value', '')
+                .type('test')
+                .should('have.value', 'test');
+            specialTextInput()
+                .should('have.value', '')
+                .type('testing')
+                .should('have.value', 'testing');
+        })
+    })
 })
