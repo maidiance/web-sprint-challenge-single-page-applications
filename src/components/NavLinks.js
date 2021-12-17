@@ -14,6 +14,9 @@ const StyledNavLinks = styled.div`
 const StyledLink = styled(Link)`
     color: ${props => props.theme.black};
     text-decoration: none;
+    &:hover {
+        color: ${props => props.theme.white};
+    }
 `
 
 
