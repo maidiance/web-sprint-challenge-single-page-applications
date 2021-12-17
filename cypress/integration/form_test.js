@@ -101,6 +101,23 @@ describe('Pizza App', () => {
             submitButton().should('not.be.disabled');
             submitButton().click();
             cy.contains('testOrder03').should('exist');
+            // reset
+            // we would remove the pizza here!
+        })
+    })
+
+    describe('Check to make sure user cannot submit form without requirements', () => {
+        it('cannot submit a new pizza without name input', () => {
+            pizzaSizeInput().select('medium');
+            submitButton().should('be.disabled');
+            // reset
+            pizzaSizeInput().select('');
+        })
+        it('cannot submit a new pizza without pizza size selection', () => {
+            nameInput().type('testOrder');
+            submitButton().should('be.disabled');
+            // reset
+            nameInput().clear();
         })
     })
 })
