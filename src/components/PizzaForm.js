@@ -34,13 +34,13 @@ export default function PizzaForm(props){
 
     const getPizzas = () => {
         // axios get call
-        axios.get('https://reqres.in/api/orders')
-            .then(resp => {
-                // console.log('get', resp);
-            })
-            .catch(err => {
-                console.error(err);
-            })
+        // axios.get('https://reqres.in/api/orders')
+        //     .then(resp => {
+        //         // console.log('get', resp);
+        //     })
+        //     .catch(err => {
+        //         console.error(err);
+        //     })
     }
 
     const postNewPizza = newPizza => {
