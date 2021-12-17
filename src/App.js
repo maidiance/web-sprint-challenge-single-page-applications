@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
-import Pizza from './components/Pizza';
+import PizzaForm from './components/PizzaForm';
 
 const App = () => {
   
@@ -9,7 +9,7 @@ const App = () => {
     <>
       <Switch>
           <Route path='/pizza'>
-              <Pizza />
+              <PizzaForm />
           </Route>
           <Route path='/'>
               <Home />

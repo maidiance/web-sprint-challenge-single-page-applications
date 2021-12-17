@@ -22,7 +22,7 @@ const initialFormErrors = {
 const initialPizzas = [];
 const initialDisabled = true;
 
-export default function Pizza(props){
+export default function PizzaForm(props){
     const [pizzas, setPizzas] = useState(initialPizzas);
     const [formValues, setFormValues] = useState(initialFormValues);
     const [formErrors, setFormErrors] = useState(initialFormErrors);
@@ -68,10 +68,10 @@ export default function Pizza(props){
 
     const formSubmit = () => {
         const newPizza = {
-        name: formValues.name.trim(),
-        pizzaSize: formValues.pizzaSize.trim(),
-        toppings: ['pepperoni', 'mushroom', 'sausage', 'onion'].filter(topping => !!formValues[topping]),
-        specialInstructions: '',
+            name: formValues.name.trim(),
+            pizzaSize: formValues.pizzaSize.trim(),
+            toppings: ['pepperoni', 'mushroom', 'sausage', 'onion'].filter(topping => !!formValues[topping]),
+            specialInstructions: formValues.specialInstructions.trim(),
         }
         postNewPizza(newPizza);
     }

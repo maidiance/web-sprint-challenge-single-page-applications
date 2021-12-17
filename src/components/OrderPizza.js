@@ -25,6 +25,8 @@ export default function OrderPizza(props) {
 
             <div className='errors'>
                 {/* errors here */}
+                <div>{errors.nameInput}</div>
+                <div>{errors.pizzaSize}</div>
             </div>
 
             <div className='form-group inputs'>
