@@ -18,4 +18,12 @@ describe('Pizza App', () => {
         submitButton().should('exist');
     })
 
+    describe('Visit the site; check for disabled submit button', () => {
+        it('can navigate tot he site', () => {
+            cy.url().should('include', 'localhost');
+        })
+        it('submit button starts out disabled', () => {
+            submitButton.apply().should('be.disabled');
+        })
+    })
 })
