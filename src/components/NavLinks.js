@@ -10,12 +10,12 @@ const StyledNavLinks = styled.div`
         padding: 1%;
         background-color: ${props => props.theme.cheese};
     }
-`
-const StyledLink = styled(Link)`
-    color: ${props => props.theme.black};
-    text-decoration: none;
-    &:hover {
-        color: ${props => props.theme.white};
+    .styledLink {
+        color: ${props => props.theme.black};
+        text-decoration: none;
+        &:hover {
+            color: ${props => props.theme.white};
+        }
     }
 `
 
@@ -24,8 +24,8 @@ export default function NavLinks(props){
         <StyledNavLinks>
             <nav>
                 <div className='nav-links'>
-                    <StyledLink to='/'>Home</StyledLink>
-                    <StyledLink to='/pizza' onClick={props.routeToShop}>Order Pizza</StyledLink>
+                    <Link className='styledLink' to='/'>Home</Link>
+                    <Link id='#order-pizza' className='styledLink' to='/pizza' onClick={props.routeToShop}>Order Pizza</Link>
                 </div>
             </nav>
         </StyledNavLinks>
