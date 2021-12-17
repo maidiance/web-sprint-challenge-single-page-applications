@@ -18,7 +18,7 @@ function Pizza({ details }) {
                     </ul>
                 </div>
             }
-            <p>Special Instructions: {details.specialInstructions}</p>
+            <p>Special Instructions: {details.specialText}</p>
         </div>
     )
 }

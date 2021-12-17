@@ -15,7 +15,7 @@ const initialFormValues = {
   mushroom: false,
   sausage: false,
   onion: false,
-  specialInstructions: '',
+  specialText: '',
 }
 
 const initialFormErrors = {
@@ -76,8 +76,8 @@ export default function PizzaForm(props){
             nameInput: formValues.nameInput.trim(),
             sizeDropdown: formValues.sizeDropdown.trim(),
             toppings: ['pepperoni', 'mushroom', 'sausage', 'onion'].filter(topping => !!formValues[topping]),
-            specialInstructions: formValues.specialInstructions.trim()
-                ? formValues.specialInstructions.trim() : 'none',
+            specialText: formValues.specialText.trim()
+                ? formValues.specialText.trim() : 'none',
         }
         postNewPizza(newPizza);
     }

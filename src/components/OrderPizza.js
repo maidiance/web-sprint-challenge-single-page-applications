@@ -89,9 +89,9 @@ export default function OrderPizza(props) {
                 <label>Special Instructions
                     <input
                         id='special-text'
-                        value={values.specialInstructions}
+                        value={values.specialText}
                         onChange={onChange}
-                        name='specialInstructions'
+                        name='specialText'
                         type='text'
                     />
                 </label>
