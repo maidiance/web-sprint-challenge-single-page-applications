@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import Header from './components/Header.js';
 import NavLinks from './components/NavLinks.js';
@@ -7,13 +7,13 @@ import schema from './validation/formSchema';
 import * as yup from 'yup';
 
 const initialFormValues = {
-  nameInput: '',
+  name: '',
   pizzaSize: '',
   pepperoni: false,
   mushroom: false,
   sausage: false,
   onion: false,
-  specialInstructions: ''
+  specialInstructions: '',
 }
 
 const initialFormErrors = {
@@ -67,6 +67,24 @@ const App = () => {
       [name]: value
     })
   }
+
+  const formSubmit = () => {
+    const newPizza = {
+      name: formValues.name.trim(),
+      pizzaSize: formValues.pizzaSize.trim(),
+      toppings: ['pepperoni', 'mushroom', 'sausage', 'onion'].filter(topping => !!formValues[topping]),
+      specialInstructions: '',
+    }
+    postNewPizza(newPizza);
+  }
+
+  useEffect(() => {
+    getPizzas();
+  }, []);
+
+  useEffect(() => {
+    schema.isValid(formValues).then(valid => setDisabled(!valid));
+  }, [formValues]);
 
   return (
     <>

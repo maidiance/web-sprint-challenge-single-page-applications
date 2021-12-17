@@ -30,7 +30,7 @@ export default function OrderPizza(props) {
             <div className='form-group inputs'>
                 <label>
                     <input
-                        value={values.nameInput}
+                        value={values.name}
                         onChange={onChange}
                         name='name-input'
                         type='text'
