@@ -1,4 +1,19 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledDiv = styled.div`
+    width: 70%
+    display: flex;
+    margin: 0 auto;
+    padding: 1% 3%;
+    background-color: ${props => props.theme.pizzaDough};
+    color: ${props => props.theme.olive};
+    .pizzaDetails{
+        background-color:${props => props.theme.darkGreen};
+        color: ${props => props.theme.black};
+        padding: 0 2%;
+    }
+`
 
 function Pizza({ details, remove }) {
     if (!details) {
@@ -6,20 +21,22 @@ function Pizza({ details, remove }) {
     }
 
     return (
-        <div className='pizza container'>
+        <StyledDiv className='pizza container'>
             <h2>{details.nameInput}</h2>
-            <p>Pizza size: {details.sizeDropdown}</p>
-            {
-                !!details.toppings && !!details.toppings.length &&
-                <div>
-                    Toppings:
-                    <ul>
-                        {details.toppings.map((topping, idx) => <li key={idx}>{topping}</li>)}
-                    </ul>
-                </div>
-            }
-            <p>Special Instructions: {details.specialText}</p>
-        </div>
+            <div className='pizzaDetails'>
+                <p>Pizza size: {details.sizeDropdown}</p>
+                {
+                    !!details.toppings && !!details.toppings.length &&
+                    <div>
+                        Toppings:
+                        <ul>
+                            {details.toppings.map((topping, idx) => <li key={idx}>{topping}</li>)}
+                        </ul>
+                    </div>
+                }
+                <p>Special Instructions: {details.specialText}</p>
+            </div>
+        </StyledDiv>
     )
 }
 
