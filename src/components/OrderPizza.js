@@ -30,17 +30,19 @@ export default function OrderPizza(props) {
             <div className='form-group inputs'>
                 <label>Name
                     <input
+                        id= 'name-input'
                         value={values.name}
                         onChange={onChange}
-                        name='name-input'
+                        name='name'
                         type='text'
                     />
                 </label>
                 <label>Pizza Size
                     <select
+                        id= 'size-dropdown'
                         value={values.pizzaSize}
                         onChange={onChange}
-                        name='size-dropdown'
+                        name='pizzaSize'
                     >
                         <option value=''>- Select an option -</option>
                         <option value='medium'>Medium (12 inches)</option>
@@ -81,6 +83,17 @@ export default function OrderPizza(props) {
                         checked={values.onion}
                     />
                 </label>
+                <label>Special Instructions
+                    <input
+                        id='special-text'
+                        value={values.specialInstructions}
+                        onChange={onChange}
+                        name='specialInstructions'
+                        type='text'
+                    />
+                </label>
+
+                <button type='submit' id='order-button' disabled={disabled}>Add to Order</button>
             </div>
         </form>
     )
