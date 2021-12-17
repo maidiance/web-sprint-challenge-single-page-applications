@@ -13,7 +13,6 @@ const StyledForm = styled.div`
     border-color: ${props => props.theme.darkerBeige};
     outline: 5px solid ${props => props.theme.lightBeige};
     .name{
-        display: inline;
         width: 90%;
         margin: 1% 0%;
     }
@@ -22,17 +21,29 @@ const StyledForm = styled.div`
         margin-right: 1%;
     }
     .size{
-        width: 60%;
-        margin: 1% 0%;
-    }
-    .toppings{
         width: 90%;
         margin: 1% 0%;
-        padding: 0 5% 2%;
+    }
+    .size p {
+        display: inline;
+        margin-right: 1%;
+    }
+    .toppings{
+        padding-bottom: 2%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 90%;
     }
     .toppings h2{
+        width: 90%;
         margin: 1% 0%;
         padding: 1%;
+    }
+    #order-button{
+        width: 50%;
+        padding: 2%;
+        margin: 1% 0;
     }
 
 `
@@ -81,7 +92,7 @@ export default function OrderPizza(props) {
                         </label>
                     </div>
                     <div className='size'>
-                        <label>Pizza Size
+                        <label><p>Pizza Size</p>
                             <select
                                 id='size-dropdown'
                                 value={values.sizeDropdown}
@@ -134,15 +145,17 @@ export default function OrderPizza(props) {
                             />
                         </label>
                     </div>
-                    <label>Special Instructions
-                        <input
-                            id='special-text'
-                            value={values.specialText}
-                            onChange={onChange}
-                            name='specialText'
-                            type='text'
-                        />
-                    </label>
+                    <div className='instructions'>
+                        <label><p>Special Instructions</p>
+                            <input
+                                id='special-text'
+                                value={values.specialText}
+                                onChange={onChange}
+                                name='specialText'
+                                type='text'
+                            />
+                        </label>
+                    </div>
 
                     <button type='submit' id='order-button' disabled={disabled}>Add to Order</button>
                 </div>
