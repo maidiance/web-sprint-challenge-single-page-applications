@@ -1,5 +1,7 @@
 import React from "react";
 import Header from './components/Header.js';
+import NavLinks from './components/NavLinks.js';
+import OrderPizza from './components/OrderPizza';
 
 const App = () => {
   return (
@@ -7,7 +9,10 @@ const App = () => {
       {
         <Header />
       }
-      <p>You can remove this code and create your own header</p>
+      {
+        <NavLinks />
+      }
+      
     </>
   );
 };
